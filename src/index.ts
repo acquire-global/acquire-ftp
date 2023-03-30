@@ -1,5 +1,5 @@
-import ftp from '../lib/ftp'
+import useFTP from '../lib/ftp'
 
-export default function () {
-	ftp()
+export default function acquireFTP() {
+	useFTP()
 }

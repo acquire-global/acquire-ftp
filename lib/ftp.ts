@@ -1,3 +1,3 @@
-export default function acquireFtp() {
+export default function useFTP() {
 	console.log('Hello World')
 }
