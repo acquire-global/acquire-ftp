@@ -5,8 +5,20 @@ export default class AcquireFTPService {
 	private _client: ftp.Client
 	private _username: string
 	private _password: string
-	readonly ACQUIRE_FTP_HOSTNAME = 'ftp.acquireglobal.com'
-	readonly FEED_DEFAULT_DESTINATION = '/static/test/'
+	static ACQUIRE_FTP_HOSTNAME = 'ftp.acquireglobal.com'
+	static FOLDERS = {
+		ARTICLES: '/static/articles/',
+		FEEDS_INBOX: '/feeds/Inbox/',
+		FEEDS: '/feeds/',
+		IMAGES: '/images/',
+		PAGES: '/static/pages/',
+		PORTALS: '/static/portals/',
+		PROMOS: '/static/promos/',
+		TEST: '/static/test/',
+		THEMES: '/static/themes/',
+	}
+
+	readonly FEED_DEFAULT_DESTINATION = AcquireFTPService.FOLDERS.FEEDS_INBOX
 
 	constructor(username: string, password: string) {
 		this._client = new ftp.Client()
@@ -16,7 +28,7 @@ export default class AcquireFTPService {
 
 	async connect() {
 		await this._client.access({
-			host: this.ACQUIRE_FTP_HOSTNAME,
+			host: AcquireFTPService.ACQUIRE_FTP_HOSTNAME,
 			user: this._username,
 			password: this._password,
 			port: 990,
