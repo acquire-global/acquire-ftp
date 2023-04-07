@@ -1,13 +1,14 @@
 {
 	"name": "acquire-ftp",
-	"version": "1.0.2",
+	"version": "1.1.0",
 	"description": "Tools for Interfacing with the Acquire FTP server",
-	"main": "build/src/index.js",
-	"types": "build/src/index.d.ts",
+	"main": "build/index.js",
+	"types": "build/index.d.ts",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "tsc",
-		"prepare": "npm run build"
+		"prepare": "npm run build",
+		"dev": "tsc -w"
 	},
 	"repository": {
 		"type": "git",
