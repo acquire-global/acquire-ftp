@@ -6,7 +6,7 @@ export default class AcquireFTPService {
 	private _username: string
 	private _password: string
 	static ACQUIRE_FTP_HOSTNAME = 'ftp.acquireglobal.com'
-	static FOLDERS = {
+	readonly FOLDERS = {
 		ARTICLES: '/static/articles/',
 		FEEDS_INBOX: '/feeds/Inbox/',
 		FEEDS: '/feeds/',
@@ -18,7 +18,7 @@ export default class AcquireFTPService {
 		THEMES: '/static/themes/',
 	}
 
-	readonly FEED_DEFAULT_DESTINATION = AcquireFTPService.FOLDERS.FEEDS_INBOX
+	readonly FEED_DEFAULT_DESTINATION = this.FOLDERS.FEEDS_INBOX
 
 	constructor(username: string, password: string) {
 		this._client = new ftp.Client()
