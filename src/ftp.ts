@@ -56,7 +56,7 @@ export default class AcquireFTPService {
 		console.log(`Finished uploading '${destination + filename}'`)
 	}
 
-	disconnect() {
+	public disconnect() {
 		this._client.close()
 	}
 }
