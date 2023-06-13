@@ -57,6 +57,6 @@ export default class AcquireFTPService {
 	}
 
 	public disconnect() {
-		this._client.close()
+		this._client && !this._client.closed && this._client.close()
 	}
 }
